@@ -11,3 +11,5 @@ Planning:
 - compute all possible boards using an iterator with hand rankings so we can calculate preflop equities
 - then we can just easily calculate post flop equities by judging the number of outs 
 - style it so we can see all possbile cards in the deck, both hands, and also the board
+
+make sure to organise code, consistent style and naming, use git, use package mangers and virutal environments, comment, unit test, and finally deploy!
