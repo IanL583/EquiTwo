@@ -1,4 +1,4 @@
-from backend.card import Card
+from card import Card
 
 class Board:
     # for multiple boards where we have an empty string then can do 3,4,5 card boards combing ranks and suits
