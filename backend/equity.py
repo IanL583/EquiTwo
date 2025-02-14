@@ -18,7 +18,7 @@ class Equity:
         seen_cards =  {str(card) for card in self.hero.cards + self.villain.cards + self.board.cards}
         return [Card(card) for card in deck - seen_cards]
 
-
+    # need to use combinations of 5 hand boards for equity streets and also potential outs
     # calculate pre-flop equity
 
     # calculate post-flop equity
@@ -26,6 +26,8 @@ class Equity:
     # evaluate which hand is stronger with hand rankings
 
     # return the final equity based on the hand spot
+
+# test outputs
 hand_one = Hand("AsAd")
 hand_two = Hand("AcAh")
 board = Board("2s2d2h")
