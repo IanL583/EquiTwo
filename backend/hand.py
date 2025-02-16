@@ -6,4 +6,5 @@ class Hand:
         self.cards = [Card(notation[:2]), Card(notation[2:])]
 
     def __repr__(self):
+        # represent the two cards together to form a hand
         return f'{self.cards[0]}{self.cards[1]}'

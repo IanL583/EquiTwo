@@ -6,7 +6,7 @@ class Card:
 
     # card constructor
     def __init__(self, notation: str):
-        # for poker notation
+        # for poker notation strings
         rank, suit = notation[0], notation[1]
         self.rank = rank
         self.suit = suit
