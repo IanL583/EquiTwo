@@ -20,18 +20,15 @@ class Equity:
 
     # calculate the equity of two hands based on the board state
     def calculate_equity(self):
-        # counters for winning scenarios for the hero or the villain or ties with different potential boards
         hero_wins = 0
         villain_wins = 0
         ties = 0
         boards = 0
-        # get cards needed to complete the board from either preflop, flop, turn or river
         remaining_cards = 5 - len(self.board.cards)
         for board in combinations(self.deck, remaining_cards):
             boards += 1
-            # create final board using outs
-            final_board = Board(str(self.board) + ''.join(map(str, board)))
-            # get the winner of each board and increment the counters
+            board_str = ''.join(str(self.board).split()) + ''.join(map(str, board))
+            final_board = Board(board_str)
             winner = self.evaluate_hand_ranking(self.hero, self.villain, final_board)
             if winner == 1:
                 hero_wins += 1
@@ -39,11 +36,13 @@ class Equity:
                 villain_wins += 1
             else:
                 ties += 1
-        # return the equity percentages
+        hero_equity = round(hero_wins / boards * 100, 2)
+        villain_equity = round(villain_wins / boards * 100, 2)
+        tie_equity = round(ties / boards * 100, 2)
         return {
-            "Hero Equity": hero_wins / boards * 100,
-            "Villain Equity": villain_wins / boards * 100,
-            "Tie Equity": ties / boards * 100
+            "Hero Equity": hero_equity,
+            "Villain Equity": villain_equity,
+            "Tie Equity": tie_equity
         }
 
     # evaluate which hand is stronger with hand rankings
@@ -127,8 +126,8 @@ class Equity:
             return (0, ranks[:5])  # High Card
 
 # test outputs for debugging
-hand_one = Hand("AsAd")
-hand_two = Hand("AcAh")
+hand_one = Hand("AsKd")
+hand_two = Hand("QdAh")
 board = Board("2d2c2s")
 
 equity = Equity(hand_one, hand_two, board)
