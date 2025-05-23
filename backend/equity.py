@@ -125,10 +125,10 @@ class Equity:
         else:
             return (0, ranks[:5])  # High Card
 
-# test outputs for debugging
-hand_one = Hand("AsKd")
-hand_two = Hand("QdAh")
-board = Board("2d2c2s")
-
-equity = Equity(hand_one, hand_two, board)
-print(equity.calculate_equity())
+if __name__ == "__main__":
+    # test outputs for debugging
+    hand_one = Hand("AsKd")
+    hand_two = Hand("QdAh")
+    board = Board("2d2c2s")
+    equity = Equity(hand_one, hand_two, board)
+    print(equity.calculate_equity())
