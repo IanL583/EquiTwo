@@ -1,4 +1,4 @@
-# represents cards and representation with their ranks and suits
+# represents poker cards and representation with their ranks and suits
 # spade, heart, diamond, club and numbers from 2 -> T and J -> A (using poker notation)
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
 suits = ['s', 'h', 'd', 'c']
