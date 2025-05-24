@@ -1,10 +1,17 @@
-from card import Card
+from card import suits, card_to_tuple
 
-class Hand:
-    def __init__(self, notation: str):
-        # create a notation thats like "e.g. AsKd"
-        self.cards = [Card(notation[:2]), Card(notation[2:])]
+# check if the hand makes a flush (5 cards of the same suit with any rank configuration)
+def is_flush(cards):
+    return 0
 
-    def __repr__(self):
-        # represent the two cards together to form a hand
-        return f'{self.cards[0]}{self.cards[1]}'
+# check if the hand makes a straight (5 cards with ranks in a row ascending)
+def is_straight(ranks):
+    return 0
+
+# check overall what hand ranking/combination a player has made
+def evaluate_hand(hand, board):
+    return 0
+
+# compare the strengths of two players hands
+def compare_hand(hand_one, hand_two, board):
+    return 0
